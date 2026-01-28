@@ -7,15 +7,16 @@ import edu.wpi.first.wpilibj2.command.Subsystem;
 
 public class ShooterSubsystem implements Subsystem {
     private final TalonFX motor;
+    private final double defaultSpeed = 0.9;
 
     // constructor
     public ShooterSubsystem() {
         motor = new TalonFX(30);
-        SmartDashboard.putNumber("Shooter Speed", -1);
+        SmartDashboard.putNumber("Shooter Speed", this.defaultSpeed);
     }
 
     public void startMotor() {
-        motor.set(SmartDashboard.getNumber("Shooter Speed", -1));
+        motor.set(SmartDashboard.getNumber("Shooter Speed", this.defaultSpeed));
     }
 
     public void stopMotor() {
