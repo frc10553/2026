@@ -6,20 +6,16 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Subsystem;
 
 public class TransferSubsystem implements Subsystem {
-    private final TalonFX motor;
+    private final TalonFX leadIndexMotor;
+    private final TalonFX followIndexMotor;
+    private final TalonFX beltMotor;
     private final double defaultSpeed = 0.9;
 
     // constructor it will set up or inizalize the object 
     public TransferSubsystem() {
-        motor = new TalonFX(30);
+        leadIndexMotor = new TalonFX(102);
+        followIndexMotor = new TalonFX(103);
+        beltMotor = new TalonFX(104);
         SmartDashboard.putNumber("Transfer Speed", this.defaultSpeed);
     }
-
-    public void startMotor() {
-        motor.set(SmartDashboard.getNumber("Transfer Speed", this.defaultSpeed));
-    }
-
-    public void stopMotor() {
-        motor.set(0);
-    } 
 }
