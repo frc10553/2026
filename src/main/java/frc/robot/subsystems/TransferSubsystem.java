@@ -9,7 +9,7 @@ public class TransferSubsystem implements Subsystem {
     private final TalonFX motor;
     private final double defaultSpeed = 0.9;
 
-    // constructor
+    // constructor it will set up or inizalize the object 
     public TransferSubsystem() {
         motor = new TalonFX(30);
         SmartDashboard.putNumber("Transfer Speed", this.defaultSpeed);
