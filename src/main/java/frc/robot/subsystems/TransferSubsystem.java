@@ -12,7 +12,6 @@ public class TransferSubsystem implements Subsystem {
     private final TalonFX beltMotor;
     private final double defaultSpeed = 0.9;
 
-    // constructor it will set up or inizalize the object
     public TransferSubsystem() {
         leadIndexMotor = new TalonFX(Constants.CanIDs.TRANSFER_LEAD_INDEX);
         followIndexMotor = new TalonFX(Constants.CanIDs.TRANSFER_FOLLOW_INDEX);

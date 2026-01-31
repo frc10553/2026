@@ -10,7 +10,6 @@ public class ClimberSubsystem implements Subsystem {
     private final TalonFX motor;
     private final double defaultSpeed = 0.9;
 
-    // constructor
     public ClimberSubsystem() {
         motor = new TalonFX(Constants.CanIDs.CLIMBER_MOTOR);
         SmartDashboard.putNumber("Climber Speed", this.defaultSpeed);
