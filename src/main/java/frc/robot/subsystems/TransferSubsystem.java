@@ -4,6 +4,7 @@ import com.ctre.phoenix6.hardware.TalonFX;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Subsystem;
+import frc.robot.Constants;
 
 public class TransferSubsystem implements Subsystem {
     private final TalonFX leadIndexMotor;
@@ -11,11 +12,11 @@ public class TransferSubsystem implements Subsystem {
     private final TalonFX beltMotor;
     private final double defaultSpeed = 0.9;
 
-    // constructor it will set up or inizalize the object 
+    // constructor it will set up or inizalize the object
     public TransferSubsystem() {
-        leadIndexMotor = new TalonFX(102);
-        followIndexMotor = new TalonFX(103);
-        beltMotor = new TalonFX(104);
+        leadIndexMotor = new TalonFX(Constants.CanIDs.TRANSFER_LEAD_INDEX);
+        followIndexMotor = new TalonFX(Constants.CanIDs.TRANSFER_FOLLOW_INDEX);
+        beltMotor = new TalonFX(Constants.CanIDs.TRANSFER_BELT);
         SmartDashboard.putNumber("Transfer Speed", this.defaultSpeed);
     }
 }
