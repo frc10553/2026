@@ -4,22 +4,24 @@ import com.ctre.phoenix6.hardware.TalonFX;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Subsystem;
+import frc.robot.Constants;
 
 public class ShooterSubsystem implements Subsystem {
-    private final TalonFX motor;
+    private final TalonFX leftMotor;
+    private final TalonFX rightMotor;
     private final double defaultSpeed = 0.9;
 
-    // constructor
     public ShooterSubsystem() {
-        motor = new TalonFX(30);
+        leftMotor = new TalonFX(Constants.CanIDs.SHOOTER_LEFT_MOTOR);
+        rightMotor = new TalonFX(Constants.CanIDs.SHOOTER_RIGHT_MOTOR);
         SmartDashboard.putNumber("Shooter Speed", this.defaultSpeed);
     }
 
     public void startMotor() {
-        motor.set(SmartDashboard.getNumber("Shooter Speed", this.defaultSpeed));
+        leftMotor.set(SmartDashboard.getNumber("Shooter Speed", this.defaultSpeed));
     }
 
     public void stopMotor() {
-        motor.set(0);
-    } 
+        leftMotor.set(0);
+    }
 }
